@@ -1,0 +1,101 @@
+<h4 class="text-center">Product Component</h4>
+<div class="container">
+  <table class="table table-bordered table-striped">
+    <tbody>
+      <tr>
+        <td>
+          <div class="form-group">
+            <label for="">Product Row Id</label>
+            <input type="text" class="form-control" [(ngModel)]="product.ProductRowId" />
+          </div>
+        </td>
+        <!-- Product Id -->
+        <td>
+          <div class="form-group">
+            <label for="">Product Id</label>
+            <input type="text" class="form-control" [(ngModel)]="product.ProductId" />
+          </div>
+        </td>
+        <!-- Product Name -->
+        <td>
+          <div class="form-group">
+            <label for="">Product Name</label>
+            <input type="text" class="form-control" [(ngModel)]="product.ProductName" />
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="form-group">
+            <label>Category Name</label>
+            <app-select-ui [DataSource]="categories" (onValueSelected)="onCatNameReceived($event)" ></app-select-ui>
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <label>Manufacturer Name</label>
+            <app-select-ui [DataSource]="manufacturers" (onValueSelected)="onManufacturerReceived($event)">
+            </app-select-ui>
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <label>Description</label>
+            <input type="text" class="form-control" [(ngModel)]="product.Description" />
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="form-group">
+            <label>Base Price</label>
+            <input type="text" class="form-control" [(ngModel)]="product.BasePrice" />
+          </div>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="2">
+          <div class="btn-group-lg">
+            <input type="button" value="New" class="btn btn-primary" (click)="clear()" />
+            <!-- <input type="button" value="Save" class="btn btn-success" (click)="saveProduct()" for 03 /> -->
+            <input type="button" value="Save" class="btn btn-success" (click)="save()" />
+          </div>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+<!-- Added For Test -->
+  <!-- <h1 class="text-center">Product List Component (Assignment 03 March)</h1>
+  {{products|json}}
+  <div class="container">
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Product Row Id</th>
+        <th>Product Id</th>
+        <th>Product Name</th>
+        <th>Category Name</th>
+        <th>Manufacturer</th>
+        <th>Description</th>
+        <th>Base Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prd of products"  class="alpha">
+        <td>{{prd.ProductRowId}}</td>
+        <td>{{prd.ProductId}}</td>
+        <td>{{prd.ProductName}}</td>
+        <td>{{prd.CategoryName}}</td>
+        <td>{{prd.Manufacturer}}</td>
+        <td>{{prd.Description}}</td>
+        <td>{{prd.BasePrice}}</td>
+        <!-- <td><button class="btn btn-outline-warning" (click)="getselectedproduct(prd)">Update</button></td>
+      </tr>
+    </tbody>
+  </table>
+  </div> -->
+<!-- Added for Test -->
+</div>

@@ -1,0 +1,16 @@
+<div class="container">
+  <button class="btn btn-danger" [(ngModel)]="_canSort"  (click)="getSelectedValue(_canSort)">Sort</button>
+  <tr
+    *ngFor="let item of fieldArray;let i=index" >
+    <td>
+      <button (click)="deleteRow(item[i])" class="btn btn-danger">
+        Delete
+      </button>
+    </td>
+    <td><input [(ngModel)]="item.EmployeeId" /></td>
+    <td><input [(ngModel)]="item.EmployeeName" /></td>
+    <td><input [(ngModel)]="item.EmployeeSalary" /></td>
+    <td><input [(ngModel)]="item.EmployeeType" /></td>
+  </tr>
+  <button class="btn btn-warning" (click)="addRow()">Add Row</button>
+</div>

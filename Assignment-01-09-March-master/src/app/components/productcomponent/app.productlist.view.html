@@ -1,0 +1,30 @@
+<h1 class="text-center">Product List Component (Assignment 03 March)</h1>
+{{products|json}}
+<div class="container">
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Product Row Id</th>
+      <th>Product Id</th>
+      <th>Product Name</th>
+      <th>Category Name</th>
+      <th>Manufacturer</th>
+      <th>Description</th>
+      <th>Base Price</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let prd of ShowProducts"  >
+      <td>{{prd.ProductRowId}}</td>
+      <td>{{prd.ProductId}}</td>
+      <td>{{prd.ProductName}}</td>
+      <td>{{prd.CategoryName}}</td>
+      <td>{{prd.Manufacturer}}</td>
+      <td>{{prd.Description}}</td>
+      <td>{{prd.BasePrice}}</td>
+      <td><button class="btn btn-outline-warning" (click)="getselectedproduct(prd)">Update</button></td>
+    </tr>
+  </tbody>
+</table>
+</div>

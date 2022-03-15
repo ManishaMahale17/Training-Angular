@@ -1,0 +1,37 @@
+<h3 class="text-center">Reactive Form Validation</h3>
+<div class="container">
+<!-- Bind the form Tag with frmEmployee -->
+<form [formGroup]="frmEmployee" (ngSubmit)="save()">
+  <div class="form-group">
+      <label>Employee ID</label>
+      <input type="text" class="form-control" formControlName="EmployeeId">
+      <div class="alert alert-danger" *ngIf="frmEmployee.controls['EmployeeId'].dirty && !frmEmployee.controls['EmployeeId'].valid">
+          <p *ngIf="frmEmployee.controls['EmployeeId'].errors['required']">Employee ID is required</p>
+          <p *ngIf="frmEmployee.controls['EmployeeId'].errors['pattern']">Employee ID must be numeric</p>
+          <p *ngIf="frmEmployee.controls['EmployeeId'].errors['minlength']">Employee ID must be 2 digits</p>
+          <p *ngIf="frmEmployee.controls['EmployeeId'].errors['maxlength']">Employee ID can be 8 digits</p>
+          <p *ngIf="!frmEmployee.controls['EmployeeId'].errors['even']">Employee ID MUST be even</p>
+          <p *ngIf="!frmEmployee.controls['EmployeeId'].errors['unique']">Employee ID MUST be Unique</p>
+      </div>
+  </div>
+
+  <div class="form-group">
+    <label for="">Employee Name</label>
+    <input type="text" class="form-control" formControlName="EmployeeName">
+    <div class="alert alert-danger" *ngIf="frmEmployee.controls['EmployeeName'].dirty && !frmEmployee.controls['EmployeeName'].valid">
+      <p *ngIf="frmEmployee.controls['EmployeeName'].errors['required']">Employee name is required</p>
+      <p *ngIf="frmEmployee.controls['EmployeeName'].errors['pattern']">Employee name must be string</p>
+      <p *ngIf="!frmEmployee.controls['EmployeeName'].errors['upperCase']">Employee name must start with Upper case</p>
+
+  </div>
+  </div>
+  <div class="form-group mt-3">
+    <input type="reset" value="Clear" class="btn btn-warning">
+    <input type="submit" value="Save" [disabled]="!frmEmployee.valid" class="btn btn-success">
+  </div>
+</form>
+<hr/>
+  <strong>
+    {{employees|json}}
+  </strong>
+</div>
