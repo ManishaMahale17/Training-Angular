@@ -27,7 +27,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let e of employees " [setColor]="'green'">
+      <tr *ngFor="let e of employees " [setColor]="'pink'">
         <td *ngFor="let col of columnHeaders" >{{e[col]}}</td>
       </tr>
       <app-table-ui [DataSource]="employeeId" (onValueSelected)="onReceived($event)"></app-table-ui>
