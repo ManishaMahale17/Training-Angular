@@ -6,10 +6,13 @@ export class EmployeeLogic{
     constructor(){
       this.employees = new Array<Employee>();
       this.employees.push(
-        new Employee(101,"Huma",30000000,"Permanent")
+        new Employee(501,"Manisha Mahale",8000000,"IT")
       );
       this.employees.push(
-        new Employee(102,"Shabname",40000000,"Contract")
+        new Employee(502,"Vaibhav Tambe",89000,"CS")
+      );
+      this.employees.push(
+        new Employee(503,"Sangam Nene",5000,"HR")
       );
     }
 
