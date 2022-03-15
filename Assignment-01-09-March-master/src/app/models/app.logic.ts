@@ -12,7 +12,7 @@ export class EmployeeLogic{
         new Employee(502,"Vaibhav Tambe",89000,"CS")
       );
       this.employees.push(
-        new Employee(503,"Sangam Nene",5000,"HR")
+        new Employee(503,"Sangam Nene",50000,"HR")
       );
     }
 
